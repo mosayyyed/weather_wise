@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:weather_app_cubit/models/weather_model/weather_item.dart';
+import 'package:weather_app_cubit/models/weather_model/weather_model.dart';
+
+import '../helpers/weather_icon_helper.dart';
 
 class WeatherForecastWidget extends StatelessWidget {
-  final List<WeatherItem> forecast;
-
+  final WeatherModel weatherModel;
   const WeatherForecastWidget({
     super.key,
-    required this.forecast,
+    required this.weatherModel,
   });
 
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
     return SizedBox(
       height: 165,
       width: double.infinity,
@@ -20,7 +24,27 @@ class WeatherForecastWidget extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 5,
         itemBuilder: (context, index) {
-          WeatherItem weatherItem = forecast[index * 8];
+          WeatherItem weatherItem = weatherModel.forecast[index * 8];
+
+          DateTime forecastTime = DateTime.fromMillisecondsSinceEpoch(
+              weatherModel.forecast[0].dt * 1000);
+
+          bool isDayTime = forecastTime.isAfter(
+                  DateTime.fromMillisecondsSinceEpoch(
+                      weatherModel.city.sunrise * 1000)) &&
+              forecastTime.isBefore(DateTime.fromMillisecondsSinceEpoch(
+                  weatherModel.city.sunset * 1000));
+
+          String day = (DateFormat('yyyy-MM-dd').format(forecastTime) ==
+                  DateFormat('yyyy-MM-dd').format(now))
+              ? 'Today'
+              : DateFormat('EEE').format(forecastTime);
+
+          String weatherIcon = getWeatherIcon(
+            weatherItem.weather[0].icon,
+            isDayTime,
+          );
+
           return Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -49,7 +73,7 @@ class WeatherForecastWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        weatherItem.dt.toString(),
+                        day,
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16.0,
@@ -59,11 +83,11 @@ class WeatherForecastWidget extends StatelessWidget {
                         height: 55.0,
                         width: 55.0,
                         child: Image.asset(
-                          "assets/weather_icons/day_sun_1.png",
+                          "assets/weather_icons/$weatherIcon",
                         ),
                       ),
                       Text(
-                        weatherItem.main.temp.toString(),
+                        "${weatherItem.main.temp}°",
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 18.0,

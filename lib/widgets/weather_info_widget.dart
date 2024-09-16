@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/weather_model/weather_model.dart';
+import 'weather_condition_icon.dart';
 import 'weather_description_widget.dart';
 
 class WeatherInfoWidget extends StatelessWidget {
@@ -17,16 +18,15 @@ class WeatherInfoWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              width: 130.0,
-              child: Image.asset("assets/weather_icons/day_sun_1.png"),
+            WeatherConditionIcon(
+              weatherModel: weatherModel,
             ),
             const SizedBox(width: 16.0),
             SizedBox(
               width: 170.0,
               child: Center(
                 child: Text(
-                  weatherModel.forecast[0].main.temp.toString(),
+                  '${weatherModel.forecast[0].main.temp}°',
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 100.0,
@@ -37,8 +37,7 @@ class WeatherInfoWidget extends StatelessWidget {
           ],
         ),
         WeatherDescriptionWidget(
-          maxTemp: weatherModel.forecast[0].main.tempMax,
-          minTemp: weatherModel.forecast[0].main.tempMin,
+          weatherModel: weatherModel,
         ),
       ],
     );

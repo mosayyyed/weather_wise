@@ -23,6 +23,7 @@ class HomeScreenBody extends StatelessWidget {
                 const SizedBox(height: 32.0),
                 LocationWidget(
                   city: state.weatherModel.city.name,
+                  country: state.weatherModel.city.country,
                 ),
                 const SizedBox(height: 16.0),
                 WeatherInfoWidget(
@@ -32,7 +33,7 @@ class HomeScreenBody extends StatelessWidget {
                 const ToggleButtonsWidget(),
                 const SizedBox(height: 16.0),
                 WeatherForecastWidget(
-                  forecast: state.weatherModel.forecast,
+                  weatherModel: state.weatherModel,
                 ),
                 const SizedBox(height: 16.0),
                 SummaryCard(
@@ -48,8 +49,7 @@ class HomeScreenBody extends StatelessWidget {
             child: Center(
               child: Text(
                 state.errorMessage,
-                style:
-                const TextStyle(color: Colors.white, fontSize: 32),
+                style: const TextStyle(color: Colors.white, fontSize: 32),
               ),
             ),
           );

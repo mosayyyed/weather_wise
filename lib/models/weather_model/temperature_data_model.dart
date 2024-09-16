@@ -1,15 +1,15 @@
-class Main {
-  int temp;
-  double feelsLike;
-  double tempMin;
-  double tempMax;
-  int pressure;
-  int seaLevel;
-  int grndLevel;
-  int humidity;
-  double tempKf;
+class TemperatureData {
+  final int temp;
+  final int feelsLike;
+  final int tempMin;
+  final int tempMax;
+  final int pressure;
+  final int seaLevel;
+  final int grndLevel;
+  final int humidity;
+  final double tempKf;
 
-  Main({
+  TemperatureData({
     required this.temp,
     required this.feelsLike,
     required this.tempMin,
@@ -21,13 +21,12 @@ class Main {
     required this.tempKf,
   });
 
-  factory Main.fromJson(Map<String, dynamic> json) {
-    print(json);
-    return Main(
+  factory TemperatureData.fromJson(Map<String, dynamic> json) {
+    return TemperatureData(
       temp: json["temp"].floor(),
-      feelsLike: json["feels_like"]?.toDouble(),
-      tempMin: json["temp_min"]?.toDouble(),
-      tempMax: json["temp_max"]?.toDouble(),
+      feelsLike: json["feels_like"].floor(),
+      tempMin: json["temp_min"].floor(),
+      tempMax: json["temp_max"].floor(),
       pressure: json["pressure"],
       seaLevel: json["sea_level"],
       grndLevel: json["grnd_level"],

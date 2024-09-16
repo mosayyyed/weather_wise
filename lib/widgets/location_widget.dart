@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class LocationWidget extends StatelessWidget {
-  const LocationWidget({super.key, this.city});
-  final String? city;
+  const LocationWidget({super.key, required this.city, required this.country});
+  final String city;
+  final String country;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,24 +14,24 @@ class LocationWidget extends StatelessWidget {
           Column(
             children: [
               Text(
-                city ?? 'Cairo',
+                city,
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 34.0,
                 ),
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.location_on_rounded,
                     color: Colors.white,
                     size: 18.0,
                   ),
-                  SizedBox(width: 8.0),
+                  const SizedBox(width: 8.0),
                   Text(
-                    'Cairo, EG',
-                    style: TextStyle(
+                    '$city, $country',
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 14.0,
                     ),
