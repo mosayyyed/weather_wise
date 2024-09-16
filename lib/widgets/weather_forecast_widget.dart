@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app_cubit/models/weather_model/weather_item.dart';
 
 class WeatherForecastWidget extends StatelessWidget {
+  final List<WeatherItem> forecast;
+
   const WeatherForecastWidget({
     super.key,
+    required this.forecast,
   });
 
   @override
@@ -16,6 +20,7 @@ class WeatherForecastWidget extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 5,
         itemBuilder: (context, index) {
+          WeatherItem weatherItem = forecast[index * 8];
           return Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -43,9 +48,9 @@ class WeatherForecastWidget extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        "41",
-                        style: TextStyle(
+                      Text(
+                        weatherItem.dt.toString(),
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16.0,
                         ),
@@ -57,9 +62,9 @@ class WeatherForecastWidget extends StatelessWidget {
                           "assets/weather_icons/day_sun_1.png",
                         ),
                       ),
-                      const Text(
-                        '31°',
-                        style: TextStyle(
+                      Text(
+                        weatherItem.main.temp.toString(),
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 18.0,
                         ),

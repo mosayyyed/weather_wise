@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
 
-import '../models/weather_model/forecast_model.dart';
-
 class WeatherService {
   final Dio dio;
   final endPoint = "https://api.openweathermap.org/data/2.5/forecast";
@@ -10,7 +8,6 @@ class WeatherService {
   WeatherService(this.dio);
 
   Future<Map<String, dynamic>> getWeather({required String cityName}) async {
-    print("befor");
     Response response = await dio.get(
       endPoint,
       queryParameters: {
@@ -19,24 +16,6 @@ class WeatherService {
         "appid": apiKey,
       },
     );
-    print("after");
-    print(response.data);
     return response.data;
-  }
-
-  Future<Forecast> getForecast({required String cityName}) async {
-    try {
-      Response response = await dio.get(
-        endPoint,
-        queryParameters: {
-          "q": cityName,
-          "appid": apiKey,
-        },
-      );
-      Forecast forecast = Forecast.fromJson(response.data);
-      return forecast;
-    } catch (e) {
-      throw e;
-    }
   }
 }

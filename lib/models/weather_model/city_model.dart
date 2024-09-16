@@ -17,11 +17,11 @@ class City {
 
   factory City.fromJson(Map<String, dynamic> json) {
     return City(
-      name: json['city']['name'],
-      country: json['city']['country'],
-      coord: Coord.fromJson(json),
-      sunrise: json['city']['sunrise'],
-      sunset: json['city']['sunset'],
+      name: json['name'],
+      country: json['country'],
+      coord: Coord.fromJson(json['coord']),
+      sunrise: json['sunrise'],
+      sunset: json['sunset'],
     );
   }
 }

@@ -26,7 +26,7 @@ class WeatherInfoWidget extends StatelessWidget {
               width: 170.0,
               child: Center(
                 child: Text(
-                  weatherModel.temperatureData.temp.toString(),
+                  weatherModel.forecast[0].main.temp.toString(),
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 100.0,
@@ -37,8 +37,8 @@ class WeatherInfoWidget extends StatelessWidget {
           ],
         ),
         WeatherDescriptionWidget(
-          maxTemp: weatherModel.temperatureData.tempMax,
-          minTemp: weatherModel.temperatureData.tempMin,
+          maxTemp: weatherModel.forecast[0].main.tempMax,
+          minTemp: weatherModel.forecast[0].main.tempMin,
         ),
       ],
     );

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app_cubit/cubit/wether_cubit/wether_cubit.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});
@@ -42,22 +44,9 @@ class HomeAppBar extends StatelessWidget {
               ],
             ),
             child: TextField(
-              // onSubmitted: (value) async {
-              //   try {
-              //     WeatherModel weatherModel =
-              //         await WeatherService(Dio()).getWeather(cityName: value);
-              //     print("e");
-              //
-              //     await Navigator.of(context).push(MaterialPageRoute(
-              //         builder: (context) => WeatherScreen(
-              //               weatherModel: weatherModel,
-              //             )));
-              //   } catch (e) {
-              //     print("---------------dvgdowsivbg");
-              //
-              //     print(e);
-              //   }
-              // },
+              onSubmitted: (value) async {
+                context.read<GetWeatherCubit>().getWeather(cityName: value);
+              },
               decoration: const InputDecoration(
                 hintText: 'Search for a city',
                 hintStyle: TextStyle(color: Colors.grey),
@@ -67,7 +56,7 @@ class HomeAppBar extends StatelessWidget {
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 10, horizontal: 5),
               ),
-              style: const TextStyle(color: Colors.black),
+              style: const TextStyle(color: Colors.white),
             ),
           ),
         ),

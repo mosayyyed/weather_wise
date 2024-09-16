@@ -49,30 +49,33 @@ class SummaryCard extends StatelessWidget {
             ),
             const SizedBox(height: 16.0),
             _buildSectionTitle('Temperature'),
-            _buildWeatherDetail('Date:', weatherModel.temperatureData.date),
+            _buildWeatherDetail('Date:', 'main'),
             _buildWeatherDetail(
-                'Current Temp:', '${weatherModel.temperatureData.temp}°C'),
+                'Current Temp:', '${weatherModel.forecast[0].main.temp}°C'),
             _buildWeatherDetail(
-                'Feels Like:', '${weatherModel.temperatureData.feelsLike}°C'),
+                'Feels Like:', '${weatherModel.forecast[0].main.feelsLike}°C'),
             _buildWeatherDetail(
-                'Min Temp:', '${weatherModel.temperatureData.tempMax}°C'),
+                'Min Temp:', '${weatherModel.forecast[0].main.tempMax}°C'),
             _buildWeatherDetail(
-                'Max Temp:', '${weatherModel.temperatureData.tempMin}°C'),
+                'Max Temp:', '${weatherModel.forecast[0].main.tempMin}°C'),
             const SizedBox(height: 16.0),
             _buildSectionTitle('Wind'),
-            _buildWeatherDetail('Speed:', '${weatherModel.wind.speed}km/h'),
-            _buildWeatherDetail('Gust:', '${weatherModel.wind.gust} km/h'),
-            _buildWeatherDetail('Direction:', '${weatherModel.wind.deg}°'),
+            _buildWeatherDetail(
+                'Speed:', '${weatherModel.forecast[0].wind.speed}km/h'),
+            _buildWeatherDetail(
+                'Gust:', '${weatherModel.forecast[0].wind.gust} km/h'),
+            _buildWeatherDetail(
+                'Direction:', '${weatherModel.forecast[0].wind.deg}°'),
             const SizedBox(height: 16.0),
             _buildSectionTitle('Pressure'),
             _buildWeatherDetail(
-                'Pressure:', '${weatherModel.temperatureData.pressure} hPa'),
+                'Pressure:', '${weatherModel.forecast[0].main.pressure} hPa'),
             _buildWeatherDetail(
-                'Sea Level:', '${weatherModel.temperatureData.seaLevel} hPa'),
+                'Sea Level:', '${weatherModel.forecast[0].main.seaLevel} hPa'),
             const SizedBox(height: 16.0),
             _buildSectionTitle('Humidity'),
             _buildWeatherDetail(
-                'Humidity:', '${weatherModel.temperatureData.humidity}%'),
+                'Humidity:', '${weatherModel.forecast[0].main.humidity}%'),
             const SizedBox(height: 16.0),
             _buildSectionTitle('Location'),
             _buildWeatherDetail(

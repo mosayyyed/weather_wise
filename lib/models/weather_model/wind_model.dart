@@ -1,7 +1,7 @@
 class Wind {
-  final double speed;
-  final int deg;
-  final double gust;
+  double speed;
+  int deg;
+  double gust;
 
   Wind({
     required this.speed,
@@ -10,12 +10,11 @@ class Wind {
   });
 
   factory Wind.fromJson(Map<String, dynamic> json) {
-    var wind = json['list'][0]['wind'];
-
+    print(json);
     return Wind(
-      speed: wind['speed'],
-      deg: wind['deg'],
-      gust: wind['gust'],
+      speed: json["speed"]?.toDouble(),
+      deg: json["deg"],
+      gust: json["gust"]?.toDouble(),
     );
   }
 }
