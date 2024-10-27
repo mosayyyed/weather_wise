@@ -1,7 +1,7 @@
 # Weather Wise App 🛒
 ![Weather App Banner](https://github.com/user-attachments/assets/ba45ce41-81ea-434c-9aa3-23c8748c4387)
 
-ome to the **Weather App** repository, a modern and feature-rich application that provides users with real-time weather information and forecasts. This project was developed as part of the final group project at IEEE Mansoura Computer Society Chapter.
+Welcome to the **Weather App** repository, a modern and feature-rich application that provides users with real-time weather information and forecasts. This project was developed as part of the final group project at IEEE Mansoura Computer Society Chapter.
 
 ## Features ✨
 
