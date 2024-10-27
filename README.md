@@ -1,7 +1,7 @@
 # Weather Wise App 🛒
 ![Weather App Banner](https://github.com/user-attachments/assets/ba45ce41-81ea-434c-9aa3-23c8748c4387)
 
-Welcome to the **Weather App** repository, a modern and feature-rich application that provides users with real-time weather information and forecasts. This project was developed as part of the final group project at IEEE Mansoura Computer Society Chapter.
+Welcome to the **Weather App** repository! This project is a modern and feature-rich mobile application that delivers real-time weather information and forecasts. Built with Flutter, it utilizes the MVVM design pattern and follows clean architecture principles, ensuring a scalable and maintainable codebase. The app provides users with an intuitive interface for checking current weather conditions, forecasts, and more, making it an essential tool for weather enthusiasts.
 
 ## Features ✨
 
