@@ -1,5 +1,5 @@
 # OnlineShop App 🛒
-![Weather App Banner](https://github.com/user-attachments/assets/dba41e65-30d2-4a0a-8cf2-6c345d85bd9f)
+![Weather App Banner](https://github.com/user-attachments/assets/161ba3b0-3d89-42ee-911f-633f36640f41)
 
 Welcome to the **Weather App** repository, a modern and feature-rich application that provides users with real-time weather information and forecasts. This project was developed as part of the final group project at IEEE Mansoura Computer Society Chapter.
 
