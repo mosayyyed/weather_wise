@@ -17,24 +17,14 @@ Welcome to the **Weather App** repository, a modern and feature-rich application
 
 ## Screenshots 📱
 
-<div align="center">
-  <img alt="onboarding" src="https://github.com/user-attachments/assets/43d3e47f-ea5f-472a-ba4d-8c45f449671b" height="350">
+  <img alt="1" src="https://github.com/user-attachments/assets/7b7c1c99-8970-4770-aeac-790b4160befc" height="350">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="auth" src="https://github.com/user-attachments/assets/11025986-6ce4-4726-8dc6-7a60e84b5144" height="350">
+  <img alt="2" src="https://github.com/user-attachments/assets/4850be8c-fd92-4066-96f0-1149f900329c" height="350">
 &nbsp; &nbsp; &nbsp; &nbsp;
-    <img alt="home" src="https://github.com/user-attachments/assets/b6315458-1f74-488f-bc1f-74961bff2570" height="350">
+    <img alt="3" src="https://github.com/user-attachments/assets/1aecae17-7637-49db-9b2d-7cc7af0c42f2" height="350">
 &nbsp; &nbsp; &nbsp; &nbsp;
-    <img alt="product" src="https://github.com/user-attachments/assets/ccb35e13-0832-44cc-9b95-ba33e5902d0f" height="350">
+    <img alt="4" src="https://github.com/user-attachments/assets/d58a389f-8183-4abc-8197-0df3fd35c687" height="350">
 &nbsp; &nbsp; &nbsp; &nbsp;
-    <img alt="cart" src="https://github.com/user-attachments/assets/bdfc9431-56c6-4d42-9064-e919b417cfbf" height="350">
-&nbsp; &nbsp; &nbsp; &nbsp;
-    <img alt="payment" src="https://github.com/user-attachments/assets/e20518f0-b18d-486a-b46c-b0051eaad6a3" height="350">
-&nbsp; &nbsp; &nbsp; &nbsp;
-   <img alt="profile" src="https://github.com/user-attachments/assets/5a72a873-5288-4a04-b36d-1ffddd3e1f29" height="350">
-&nbsp; &nbsp; &nbsp; &nbsp;
-
-
-</div>
 
 ## Tech Stack ⚙️
 
