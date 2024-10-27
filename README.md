@@ -43,7 +43,7 @@ To get started with the OnlineShop app:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/OnlineShop.git
+   git clone git@github.com:mosayyyed/weather_wise.git
     ```
 
 2. Install dependencies:
