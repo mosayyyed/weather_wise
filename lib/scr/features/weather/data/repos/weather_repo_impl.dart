@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:weather_app_cubit/scr/core/utils/api_service.dart';
 
 import '../../../../core/errors/failure.dart';
 import '../../../../core/errors/server_failure.dart';
+import '../../../../core/utils/api_service.dart';
 import '../models/weather_model/weather_model.dart';
-import 'weather_repo.dart';
+import '../repository/weather_repo.dart';
 
 class WeatherRepoImpl implements WeatherRepo {
   final ApiService _apiService;
@@ -25,6 +25,7 @@ class WeatherRepoImpl implements WeatherRepo {
           "units": "metric",
         },
       );
+
       if (response.statusCode == 200) {
         final weatherModel = WeatherModel.fromJson(response.data);
         return Right(weatherModel);
