@@ -28,8 +28,8 @@ class HomeAppBar extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Colors.white.withOpacity(0.4),
-                  Colors.white.withOpacity(0.2)
+                  Colors.white.withOpacity(0.5),
+                  Colors.white.withOpacity(0.3)
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -49,9 +49,9 @@ class HomeAppBar extends StatelessWidget {
               },
               decoration: const InputDecoration(
                 hintText: 'Search for a city',
-                hintStyle: TextStyle(color: Colors.grey),
-                prefixIcon: Icon(Icons.search, color: Colors.grey),
-                suffixIcon: Icon(Icons.mic_rounded, color: Colors.grey),
+                hintStyle: TextStyle(color: Colors.black54),
+                prefixIcon: Icon(Icons.search, color: Colors.black54),
+                suffixIcon: Icon(Icons.mic_rounded, color: Colors.black54),
                 border: InputBorder.none,
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 10, horizontal: 5),

@@ -7,7 +7,6 @@ class TemperatureData {
   final int seaLevel;
   final int grndLevel;
   final int humidity;
-  final double tempKf;
 
   TemperatureData({
     required this.temp,
@@ -18,7 +17,6 @@ class TemperatureData {
     required this.seaLevel,
     required this.grndLevel,
     required this.humidity,
-    required this.tempKf,
   });
 
   factory TemperatureData.fromJson(Map<String, dynamic> json) {
@@ -31,7 +29,6 @@ class TemperatureData {
       seaLevel: json["sea_level"],
       grndLevel: json["grnd_level"],
       humidity: json["humidity"],
-      tempKf: json["temp_kf"]?.toDouble(),
     );
   }
 }

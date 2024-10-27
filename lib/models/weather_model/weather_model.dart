@@ -4,7 +4,7 @@ import 'city_model.dart';
 
 class WeatherModel {
   final City city;
-  List<WeatherItem> forecast;
+  final List<WeatherItem> forecast;
 
   WeatherModel({
     required this.city,

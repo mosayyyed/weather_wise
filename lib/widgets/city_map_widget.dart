@@ -4,7 +4,14 @@ import 'package:latlong2/latlong.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CityMapScreen extends StatelessWidget {
-  const CityMapScreen({super.key});
+  final double latitude;
+  final double longitude;
+
+  const CityMapScreen({
+    super.key,
+    required this.latitude,
+    required this.longitude,
+  });
 
   // Function to open Google Maps with the given coordinates
   Future<void> _openGoogleMaps(LatLng coordinates) async {
@@ -28,9 +35,11 @@ class CityMapScreen extends StatelessWidget {
           width: double.infinity,
           child: FlutterMap(
             options: MapOptions(
-              backgroundColor: Colors.white.withOpacity(0.2),
-              initialCenter: const LatLng(30.0626, 31.2497),
+              initialCenter: LatLng(latitude, longitude),
               initialZoom: 12,
+              interactionOptions: const InteractionOptions(flags: 0),
+              minZoom: 12,
+              maxZoom: 12,
               onTap: (tapPosition, latLng) {
                 _openGoogleMaps(latLng);
               },
@@ -40,6 +49,7 @@ class CityMapScreen extends StatelessWidget {
                 urlTemplate:
                     'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
                 subdomains: const ['a', 'b', 'c', 'd'],
+                retinaMode: true,
               ),
             ],
           ),

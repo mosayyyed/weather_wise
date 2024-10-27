@@ -4,10 +4,15 @@ import 'package:weather_app_cubit/cubit/wether_cubit/weather_states.dart';
 import 'package:weather_app_cubit/cubit/wether_cubit/wether_cubit.dart';
 import 'package:weather_app_cubit/widgets/city_map_widget.dart';
 import 'package:weather_app_cubit/widgets/location_widget.dart';
-import 'package:weather_app_cubit/widgets/summary_card.dart';
 import 'package:weather_app_cubit/widgets/toggle_buttons_widget.dart';
 import 'package:weather_app_cubit/widgets/weather_forecast_widget.dart';
 import 'package:weather_app_cubit/widgets/weather_info_widget.dart';
+import 'package:weather_app_cubit/widgets/weather_summary/summary_card.dart';
+
+import '../basic_weather_info_widget/basic_weather_info.dart';
+import '../header_widget.dart';
+import '../wind_info_widget/wind_info_widget.dart';
+import 'data_chart.dart';
 
 class HomeScreenBody extends StatelessWidget {
   const HomeScreenBody({super.key});
@@ -36,11 +41,33 @@ class HomeScreenBody extends StatelessWidget {
                   weatherModel: state.weatherModel,
                 ),
                 const SizedBox(height: 16.0),
+                BasicWeatherInfoWidget(
+                  weatherModel: state.weatherModel,
+                ),
+                WindInfoWidget(
+                  weatherModel: state.weatherModel,
+                ),
                 SummaryCard(
                   weatherModel: state.weatherModel,
                 ),
                 const SizedBox(height: 16.0),
-                const CityMapScreen(),
+                const SectionHeader(
+                  title: 'Daily Temp Data',
+                  seeMore: 'View all',
+                ),
+                DataChart(
+                  weatherModel: state.weatherModel,
+                ),
+                const SizedBox(height: 16.0),
+                const SectionHeader(
+                  title: 'City Overview',
+                  seeMore: '',
+                ),
+                CityMapScreen(
+                  latitude: state.weatherModel.city.coord.lat,
+                  longitude: state.weatherModel.city.coord.lon,
+                ),
+                const SizedBox(height: 16.0),
               ],
             ),
           );
@@ -55,9 +82,26 @@ class HomeScreenBody extends StatelessWidget {
           );
         } else {
           return const SliverToBoxAdapter(
-            child: Center(
-              child: CircularProgressIndicator(
-                color: Colors.white,
+            child: SizedBox(
+              height: 500,
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircularProgressIndicator(
+                      color: Colors.white,
+                    ),
+                    SizedBox(height: 16),
+                    Text(
+                      'Loading...',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           );

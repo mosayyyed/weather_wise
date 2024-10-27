@@ -12,12 +12,10 @@ class GetWeatherCubit extends Cubit<WeatherState> {
     emit(WeatherLoading());
 
     try {
-      print("befor");
       final response = await weatherService.getWeather(cityName: cityName);
       WeatherModel weatherModel = WeatherModel.fromJson(response);
 
       emit(WeatherLoaded(weatherModel));
-      print("after");
     } catch (e) {
       emit(WeatherError(e.toString()));
     }

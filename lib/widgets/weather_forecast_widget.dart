@@ -25,15 +25,11 @@ class WeatherForecastWidget extends StatelessWidget {
         itemCount: 5,
         itemBuilder: (context, index) {
           WeatherItem weatherItem = weatherModel.forecast[index * 8];
+          DateTime forecastTime = weatherItem.dt;
 
-          DateTime forecastTime = DateTime.fromMillisecondsSinceEpoch(
-              weatherModel.forecast[0].dt * 1000);
-
-          bool isDayTime = forecastTime.isAfter(
-                  DateTime.fromMillisecondsSinceEpoch(
-                      weatherModel.city.sunrise * 1000)) &&
-              forecastTime.isBefore(DateTime.fromMillisecondsSinceEpoch(
-                  weatherModel.city.sunset * 1000));
+          bool isDayTime = weatherModel.forecast[0].dt
+                  .isAfter(weatherModel.city.sunrise) &&
+              weatherModel.forecast[0].dt.isBefore(weatherModel.city.sunset);
 
           String day = (DateFormat('yyyy-MM-dd').format(forecastTime) ==
                   DateFormat('yyyy-MM-dd').format(now))

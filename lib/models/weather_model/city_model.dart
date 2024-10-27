@@ -1,11 +1,13 @@
+import 'package:intl/intl.dart';
+
 import 'coord_model.dart';
 
 class City {
   final String name;
   final String country;
   final Coord coord;
-  final int sunrise;
-  final int sunset;
+  final DateTime sunrise;
+  final DateTime sunset;
 
   City({
     required this.name,
@@ -20,8 +22,17 @@ class City {
       name: json['name'],
       country: json['country'],
       coord: Coord.fromJson(json['coord']),
-      sunrise: json['sunrise'],
-      sunset: json['sunset'],
+      sunrise: DateTime.fromMillisecondsSinceEpoch(json['sunrise'] * 1000),
+      sunset: DateTime.fromMillisecondsSinceEpoch(json['sunset'] * 1000),
     );
+  }
+
+  // Function to format sunrise and sunset times as 'HH:mm' when needed
+  String getFormattedSunrise() {
+    return DateFormat('hh:mm a').format(sunrise);
+  }
+
+  String getFormattedSunset() {
+    return DateFormat('hh:mm a').format(sunset);
   }
 }
