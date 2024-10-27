@@ -2,11 +2,11 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:weather_app_cubit/scr/core/utils/api_service.dart';
-import 'package:weather_app_cubit/scr/features/weather/data/repository/weather_repo_impl.dart';
-import 'package:weather_app_cubit/scr/features/weather/presentation/views/home_screen.dart';
 
-import 'scr/features/weather/presentation/manger/wether_cubit/wether_cubit.dart';
+import 'core/utils/api_service.dart';
+import 'features/weather/data/repos/weather_repo_impl.dart';
+import 'features/weather/presentation/manger/wether_cubit/wether_cubit.dart';
+import 'features/weather/presentation/views/home_screen.dart';
 
 void main() {
   runApp(const MyApp());

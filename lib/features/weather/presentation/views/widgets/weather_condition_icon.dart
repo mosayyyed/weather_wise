@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app_cubit/scr/features/weather/data/models/weather_model/weather_model.dart';
 
-import '../../../../../../helpers/weather_icon_helper.dart';
+import '../../../../../core/helpers/weather_icon_helper.dart';
+import '../../../data/models/weather_model/weather_model.dart';
 
 class WeatherConditionIcon extends StatelessWidget {
   final WeatherModel weatherModel;

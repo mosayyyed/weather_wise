@@ -1,6 +1,5 @@
-import 'package:weather_app_cubit/scr/features/weather/data/models/weather_model/weather_item.dart';
-
 import 'city_model.dart';
+import 'weather_item.dart';
 
 class WeatherModel {
   final City city;

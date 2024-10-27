@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../../../../../helpers/weather_icon_helper.dart';
+import '../../../../../core/helpers/weather_icon_helper.dart';
 import '../../../data/models/weather_model/weather_item.dart';
 import '../../../data/models/weather_model/weather_model.dart';
 

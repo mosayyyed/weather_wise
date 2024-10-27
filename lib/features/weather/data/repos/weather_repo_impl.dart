@@ -1,20 +1,23 @@
 import 'package:dartz/dartz.dart';
-import 'package:weather_app_cubit/scr/features/search/data/repos/search_repo.dart';
+import 'package:dio/dio.dart';
 
 import '../../../../core/errors/failure.dart';
 import '../../../../core/errors/server_failure.dart';
 import '../../../../core/utils/api_service.dart';
-import '../../../weather/data/models/weather_model/weather_model.dart';
+import '../models/weather_model/weather_model.dart';
+import 'weather_repo.dart';
 
-class SearchRepoImpl implements SearchRepo {
-  final ApiService apiService;
+class WeatherRepoImpl implements WeatherRepo {
+  final ApiService _apiService;
 
-  SearchRepoImpl(this.apiService);
+  WeatherRepoImpl(this._apiService);
 
   @override
-  Future<Either<Failure, WeatherModel>> searchWeather(String cityName) async {
+  Future<Either<Failure, WeatherModel>> getWeather({
+    required String cityName,
+  }) async {
     try {
-      final response = await apiService.get(
+      final response = await _apiService.get(
         'https://api.openweathermap.org/data/2.5/forecast',
         {
           "q": cityName,
@@ -31,8 +34,8 @@ class SearchRepoImpl implements SearchRepo {
             response.data['message'] ?? 'Failed to load weather data';
         return Left(ServerFailure(errorMessage));
       }
-    } on Exception catch (error) {
-      return Left(ServerFailure('An error occurred: ${error.toString()}'));
+    } on DioException catch (error) {
+      return Left(ServerFailure.fromDioException(error));
     }
   }
 }

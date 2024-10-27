@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app_cubit/scr/features/weather/presentation/manger/wether_cubit/wether_cubit.dart';
 
 import '../../../manger/wether_cubit/weather_states.dart';
+import '../../../manger/wether_cubit/wether_cubit.dart';
 import '../basic_weather_info_widget/basic_weather_info.dart';
 import '../city_map_widget.dart';
 import '../header_widget.dart';

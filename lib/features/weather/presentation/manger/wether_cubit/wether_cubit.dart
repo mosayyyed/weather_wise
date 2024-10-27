@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app_cubit/scr/features/weather/data/repository/weather_repo.dart';
-import 'package:weather_app_cubit/scr/features/weather/presentation/manger/wether_cubit/weather_states.dart';
+
+import '../../../data/repos/weather_repo.dart';
+import 'weather_states.dart';
 
 class GetWeatherCubit extends Cubit<WeatherState> {
   final WeatherRepo weatherRepo;
