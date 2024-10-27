@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app_cubit/cubit/wether_cubit/weather_states.dart';
-import 'package:weather_app_cubit/cubit/wether_cubit/wether_cubit.dart';
-import 'package:weather_app_cubit/widgets/city_map_widget.dart';
-import 'package:weather_app_cubit/widgets/location_widget.dart';
-import 'package:weather_app_cubit/widgets/toggle_buttons_widget.dart';
-import 'package:weather_app_cubit/widgets/weather_forecast_widget.dart';
-import 'package:weather_app_cubit/widgets/weather_info_widget.dart';
-import 'package:weather_app_cubit/widgets/weather_summary/summary_card.dart';
+import 'package:weather_app_cubit/scr/features/weather/presentation/manger/wether_cubit/wether_cubit.dart';
 
+import '../../../manger/wether_cubit/weather_states.dart';
 import '../basic_weather_info_widget/basic_weather_info.dart';
+import '../city_map_widget.dart';
 import '../header_widget.dart';
+import '../location_widget.dart';
+import '../toggle_buttons_widget.dart';
+import '../weather_forecast_widget.dart';
+import '../weather_info_widget.dart';
+import '../weather_summary/summary_card.dart';
 import '../wind_info_widget/wind_info_widget.dart';
 import 'data_chart.dart';
 
@@ -21,7 +21,7 @@ class HomeScreenBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<GetWeatherCubit, WeatherState>(
       builder: (context, state) {
-        if (state is WeatherLoaded) {
+        if (state is WeatherSuccess) {
           return SliverToBoxAdapter(
             child: Column(
               children: [

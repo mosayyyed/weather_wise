@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app_cubit/widgets/home_screen/home_screen_body.dart';
-
-import '../widgets/home_screen/home_app_bar.dart';
+import 'package:weather_app_cubit/scr/features/weather/presentation/views/widgets/home_screen/home_app_bar.dart';
+import 'package:weather_app_cubit/scr/features/weather/presentation/views/widgets/home_screen/home_screen_body.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

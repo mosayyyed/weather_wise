@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:weather_app_cubit/models/weather_model/weather_model.dart';
+import 'package:weather_app_cubit/scr/features/weather/data/models/weather_model/weather_model.dart';
 
 class DataChart extends StatelessWidget {
   final WeatherModel weatherModel;

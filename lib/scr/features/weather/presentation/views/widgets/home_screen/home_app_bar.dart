@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app_cubit/cubit/wether_cubit/wether_cubit.dart';
+import 'package:weather_app_cubit/scr/features/weather/presentation/manger/wether_cubit/wether_cubit.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});

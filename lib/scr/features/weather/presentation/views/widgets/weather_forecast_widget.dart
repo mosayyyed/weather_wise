@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:weather_app_cubit/models/weather_model/weather_item.dart';
-import 'package:weather_app_cubit/models/weather_model/weather_model.dart';
 
-import '../helpers/weather_icon_helper.dart';
+import '../../../../../../helpers/weather_icon_helper.dart';
+import '../../../data/models/weather_model/weather_item.dart';
+import '../../../data/models/weather_model/weather_model.dart';
 
 class WeatherForecastWidget extends StatelessWidget {
   final WeatherModel weatherModel;

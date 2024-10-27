@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:weather_app_cubit/models/weather_model/weather_model.dart';
 
+import '../../../../data/models/weather_model/weather_model.dart';
 import 'read_more_button.dart';
 import 'section_title.dart';
-import 'weather_detail.dart'; // Import the new widget classes
+import 'weather_detail.dart';
 
 class SummaryCard extends StatefulWidget {
   final WeatherModel weatherModel;
@@ -12,10 +12,10 @@ class SummaryCard extends StatefulWidget {
   const SummaryCard({super.key, required this.weatherModel});
 
   @override
-  _SummaryCardState createState() => _SummaryCardState();
+  SummaryCardState createState() => SummaryCardState();
 }
 
-class _SummaryCardState extends State<SummaryCard> {
+class SummaryCardState extends State<SummaryCard> {
   bool _showMore = false;
 
   @override

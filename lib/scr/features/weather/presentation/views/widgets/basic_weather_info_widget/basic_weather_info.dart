@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app_cubit/models/weather_model/weather_model.dart';
+
+import '../../../../data/models/weather_model/weather_model.dart';
 
 class BasicWeatherInfoWidget extends StatelessWidget {
   final WeatherModel weatherModel;
