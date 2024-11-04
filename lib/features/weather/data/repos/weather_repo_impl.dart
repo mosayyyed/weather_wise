@@ -18,8 +18,8 @@ class WeatherRepoImpl implements WeatherRepo {
   }) async {
     try {
       final response = await _apiService.get(
-        'https://api.openweathermap.org/data/2.5/forecast',
-        {
+        url: '${ApiService.kBaseUrl}/forecast',
+        queryParameters: {
           "q": cityName,
           "appid": "13e512bb9594d5d7e292f42b97d8ca75",
           "units": "metric",

@@ -27,7 +27,7 @@ class City {
     );
   }
 
-  // Function to format sunrise and sunset times as 'HH:mm' when needed
+  // Methods to format sunrise and sunset times as 'HH:mm' when needed
   String getFormattedSunrise() {
     return DateFormat('hh:mm a').format(sunrise);
   }

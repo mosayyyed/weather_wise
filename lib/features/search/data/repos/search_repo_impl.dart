@@ -15,8 +15,8 @@ class SearchRepoImpl implements SearchRepo {
   Future<Either<Failure, WeatherModel>> searchWeather(String cityName) async {
     try {
       final response = await apiService.get(
-        'https://api.openweathermap.org/data/2.5/forecast',
-        {
+        url: 'https://api.openweathermap.org/data/2.5/forecast',
+        queryParameters: {
           "q": cityName,
           "appid": "13e512bb9594d5d7e292f42b97d8ca75",
           "units": "metric",
